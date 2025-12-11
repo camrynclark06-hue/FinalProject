@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Catching Stars Game</title>
+  <style>
+    body {
+      margin: 0;
+      background: linear-gradient(to bottom, #1a1a2e, #16213e);
+      overflow: hidden;
+      font-family: Arial, sans-serif;
+      color: white;
+      text-align: center;
+    }
+
+    h1 {
+      margin-top: 20px;
+    }
+
+    #player {
+      width: 80px;
+      height: 80px;
+      background: url('https://cdn-icons-png.flaticon.com/512/616/616408.png') no-repeat center;
+      background-size: contain;
+      position: absolute;
+      bottom: 20px;
+      left: 50%;
+      transform: translateX(-50%);
+    }
+
+    .star {
+      width: 40px;
+      height: 40px;
+      background: url('https://cdn-icons-png.flaticon.com/512/1828/1828884.png') no-repeat center;
+      background-size: contain;
+      position: absolute;
+      top: -50px;
+    }
+
+    #score {
+      position: absolute;
+      top: 20px;
+      left: 20px;
+      font-size: 24px;
+    }
+
+    a {
+      position: absolute;
+      top: 20px;
+      right: 20px;
+      padding: 10px 16px;
+      background: rgba(255,255,255,0.2);
+      border-radius: 6px;
+      color: white;
+      text-decoration: none;
+      font-size: 16px;
+      backdrop-filter: blur(4px);
+    }
+  </style>
+</head>
+
+<body>
+
+<a href="index.html">Home</a>
+
+<h1>⭐ About Me + Game ⭐</h1>
+<div id="score">Score: 0</div>
+<div id="player"></div>
+
+<script>
+  const player = document.getElementById("player");
+  let score = 0;
+  let playerX = window.innerWidth / 2;
+
+  document.addEventListener("mousemove", (event) => {
+    playerX = event.clientX;
+    player.style.left = playerX - 40 + "px";
+  });
+
+  function createStar() {
+    const star = document.createElement("div");
+    star.classList.add("star");
+    star.style.left = Math.random() * (window.innerWidth - 40) + "px";
+    document.body.appendChild(star);
+    
+    let starY = -50;
+    const fallSpeed = 2 + Math.random() * 4;
+
+    function fall() {
+      starY += fallSpeed;
+      star.style.top = starY + "px";
+
+      const playerRect = player.getBoundingClientRect();
+      const starRect = star.getBoundingClientRect();
+
+      if (
+        starRect.bottom >= playerRect.top &&
+        starRect.left < playerRect.right &&
+        starRect.right > playerRect.left
+      ) {
+        score++;
+        document.getElementById("score").innerText = "Score: " + score;
+        star.remove();
+        return;
+      }
+
+      if (starY < window.innerHeight) {
+        requestAnimationFrame(fall);
+      } else {
+        star.remove();
+      }
+    }
+
+    fall();
+  }
+
+  setInterval(createStar, 600);
+</script>
+
+</body>
+</html>

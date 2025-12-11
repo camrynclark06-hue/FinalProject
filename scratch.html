@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Camryn Clark - About Violin</title>
+</head>
+<link href="css/mystyles.css" rel="stylesheet" />
+<link href="css/styles.css" rel="stylesheet" />
+<body>
+    <header class="topblock">
+        <h1>Violin</h1>
+        <h2>The impact of music</h2>
+        <a href="index.html">Home</a>
+        <br>
+
+     <img src="/assets/img/violin_1.png" alt="image of violin">
+    </header>
+    <div class="content" id="contents">
+    <h2>Contents</h2>
+    <ol>
+      <li>Overview
+        <ul>
+          <li>Why learn an instrument?</li>
+          <li>How the violin fits into life</li>
+        </ul>
+      </li>
+      <li><a href="#practice">Practice Tips</a></li>
+      <li><a href="#tableau">Interactive Evidence</a></li>
+      <li><a href="#media">Media</a></li>
+    </ol>
+  </div>
+   <div class="leftcol" id="overview">
+    <h2>Overview</h2>
+    <p>The violin is a versatile instrument that builds discipline, fine-motor skills, and musical sensitivity. This page contains practice tips, resources, and an embedded Tableau viz showing data related to music and education.</p>
+    <p><a href="#contents">Back to top</a></p>
+  </div>
+    <div class="rightcol" id="practice">
+    <h2>Practice Tips</h2>
+    <ol>
+      <li>Short, focused sessions (20 to 30 minutes)</li>
+      <li>Slow practice with a metronome</li>
+      <li>Record and review</li>
+      <li>Set achievable weekly goals</li>
+    </ol>
+
+    <h3>Repertoire ideas</h3>
+    <ul>
+      <li>Beginner: Suzuki Book 1 pieces</li>
+      <li>Intermediate: Bach Partitas & simple concertos</li>
+      <li>Advanced: Ysaÿe, Paganini excerpts</li>
+    </ul>
+  </div>
+
+  <div class="media" id="media">
+    <h2>Media</h2>
+    
+
+
+
+    <iframe width="560" height="315" src="https://www.youtube.com/embed/R0JKCYZ8hng?si=86jq5-rxsrrYIvuw" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+ <!-- Responsive Tableau Viz -->
+<div id="tableau-container" style="max-width: 1200px; margin: 0 auto; padding: 20px;">
+    <div class="tableauPlaceholder" id="vizOrchestra" style="position: relative; width: 100%; height: 900px;">
+        <noscript>
+            <a href="#">
+                <img 
+                    alt="Do you know what instruments are where in the orchestra?"
+                    src="https://public.tableau.com/static/images/Do/Doyouknowwhatinstrumentsarewhereintheorchestra/Doyouknowwhatinstrumentsarewhereintheorchestra/1.png"
+                    style="border:none; width:100%;"
+                />
+            </a>
+        </noscript>
+
+        <object class="tableauViz" style="display:none; width:100%; height:100%;">
+            <param name="host_url" value="https%3A%2F%2Fpublic.tableau.com%2F" />
+            <param name="embed_code_version" value="3" />
+            <param name="site_root" value="" />
+            <param name="name" value="Doyouknowwhatinstrumentsarewhereintheorchestra/Doyouknowwhatinstrumentsarewhereintheorchestra" />
+            <param name="tabs" value="no" />
+            <param name="toolbar" value="yes" />
+            <param name="static_image" value="https://public.tableau.com/static/images/Do/Doyouknowwhatinstrumentsarewhereintheorchestra/Doyouknowwhatinstrumentsarewhereintheorchestra/1.png" />
+            <param name="animate_transition" value="yes" />
+            <param name="display_static_image" value="yes" />
+            <param name="display_spinner" value="yes" />
+            <param name="display_overlay" value="yes" />
+            <param name="display_count" value="yes" />
+            <param name="language" value="en-US" />
+        </object>
+    </div>
+</div>
+
+<script type="text/javascript">
+    var divElement = document.getElementById('vizOrchestra');
+    var vizElement = divElement.getElementsByTagName('object')[0];
+    vizElement.style.width = '100%';
+    vizElement.style.height = '900px'; // Increase height if content still cuts off
+    var scriptElement = document.createElement('script');
+    scriptElement.src = 'https://public.tableau.com/javascripts/api/viz_v1.js';
+    vizElement.parentNode.insertBefore(scriptElement, vizElement);
+</script> 
+
+  <!-- Back to Top button -->
+  <button id="backToTop" class="back-to-top" aria-label="Back to top" title="Back to top">↑</button>
+  <script src="js/scripts.js"></script>
+
+</body>
+</html>
